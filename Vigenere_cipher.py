@@ -1,11 +1,14 @@
-text = 'mrttaqrhknsw ih puggrur'
-custom_key = 'python'
+# Request user input for text and custom_key variables
+text = input('What text do you want encrypted? ')
+custom_key = input('What is the key? ')
 
+# Define the vigenere function
 def vigenere(message, key, direction=1):
     key_index = 0
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     final_message = ''
 
+    # Loop to convert each character of message
     for char in message.lower():
 
         # Append any non-letter character to the message
@@ -24,12 +27,15 @@ def vigenere(message, key, direction=1):
     
     return final_message
 
+# Define the enrypt function
 def encrypt(message, key):
     return vigenere(message, key)
-    
+
+# Define the decrypt function
 def decrypt(message, key):
     return vigenere(message, key, -1)
 
+# Print the encrypted and decrypted text and key
 print(f'\nEncrypted text: {text}')
 print(f'Key: {custom_key}')
 decryption = decrypt(text, custom_key)
